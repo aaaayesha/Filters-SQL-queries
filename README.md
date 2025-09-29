@@ -27,9 +27,21 @@ The second condition is success = 0 or FALSE, which filters for the failed login
 
 A suspicious event occurred on 2022-05-09. To investigate this event, we review all login attempts which occurred on this day and the day before. I used filters in SQL to create a query that identifies all login attempts that occurred on 2022-05-09 or 2022-05-08. (The date of the login attempt is found in the login_date column.)
 
-<img width="921" height="373" alt="image" src="https://github.com/user-attachments/assets/8fce2e2c-6b4e-4b47-89f1-866c3c0f3a2c" />
+<img width="921" height="373" alt="Screenshot 2" src="https://github.com/user-attachments/assets/ebf689ac-fc3b-491b-ab72-a8c2b51188c4" />
+
+The first part of the screenshot is my query, and the second part is a portion of the output. This query returns all login attempts that occurred on 2022-05-09 or 2022-05-08. First, I started by selecting all data from the log_in_attempts table. Then, I used a WHERE clause with an OR operator to filter my results to output only login attempts that occurred on either 2022-05-09 or 2022-05-08. The first condition is login_date = '2022-05-09', which filters for logins on 2022-05-09. The second condition is login_date = '2022-05-08', which filters for logins on 2022-05-08.
 
 
+# Retrieve login attempts outside of Mexico
+
+After investigating the organization’s data on login attempts, I believe there is an issue with the login attempts that occurred outside of Mexico. These login attempts should be investigated.
+The following code demonstrates how I created a SQL query to filter for login attempts that occurred outside of Mexico.
+
+<img width="917" height="318" alt="Screenshot 3" src="https://github.com/user-attachments/assets/1d0327fd-9bd5-4db2-bfb4-e03f44e56b41" />
+
+The first part of the screenshot is my query, and the second part is a portion of the output. This query returns all login attempts that occurred in countries other than Mexico. First, I started by selecting all data from the log_in_attempts table. Then, I used a WHERE clause with NOT to filter for countries other than Mexico. I used LIKE with MEX% as the pattern to match because the dataset represents Mexico as MEX and MEXICO. The percentage sign (%) represents any number of unspecified characters when used with LIKE. 
+
+# Retrieve employees in Marketing
 
 
 
